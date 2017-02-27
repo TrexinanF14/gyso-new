@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GYSO Sign Up</title>
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="1063937390683-bi7dtosbmjgjcqe2pfiis2k7ode90a8p.apps.googleusercontent.com">
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin" method="post">
+            <h3 class="form-signin-heading">GYSO Registration</h3>
+            <a href="/register-spanish">En Español</a>
+            <br />
+            <br />
+            <label>Player's Name</label>
+            <input type="text" class="form-control" placeholder="Name" name="name" required>
+            <br />
+            <label>Current Grade</label>
+            <select class="form-control" name="grade" required>
+                <option value="0">Kindergarten</option>
+                <option value="1">1st Grade</option>
+                <option value="2">2nd-3rd Grade</option>
+                <option value="3">4th-5th Grade</option>
+                <option value="4">Middle School</option>
+            </select>
+            <br />
+            <label>Sex</label>
+            <select class="form-control" name="sex" required>
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+            </select>
+            <br />
+            <label>Birth Date</label>
+            <input type="datetime" class="form-control" placeholder="XX/XX/20XX" name="birthday" required>
+            <br />
+            <label>Athletic Ability</label>
+            <select class="form-control" name="athletic" required>
+                <option value="Average">Average</option>
+                <option value="Considerable">Considerable</option>
+                <option value="Limited">Limited</option>
+            </select>
+            <br />
+            <label>Addtional Soccer Experience</label>
+            <input type="text" class="form-control" placeholder="" name="soccerexperience" required>
+            <br />
+            <label>I want to play with (name of one player)</label>
+            <input type="text" class="form-control" placeholder="Player Name" name="playwith" required>
+            <br />
+            <label>Parent's Name</label>
+            <input type="text" class="form-control" placeholder="" name="parentname" required>
+            <br />
+            <label>Preferred Contact Phone 1</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="parentphone1" required>
+            <br />
+            <label>Preferred Contact Phone 2 (optional)</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="parentphone2">
+            <br />
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="example@example.com" name="parentemail" required>
+            <br />
+            <label>Emergency Contact Name</label>
+            <input type="text" class="form-control" placeholder="" name="emergencyname" required>
+            <br />
+            <label>Emergency Contact Phone 1</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="emergencyphone1" required>
+            <br />
+            <label>Emergency Contact Phone 2 (optional)</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="emergencyphone2">
+            <br />
+            <label>Sponsor ($250 [tax-deductible] per team – your business name and logo will appear on team t-shirts)</label>
+            <input type="checkbox" class="form-control" name="sponsorcheck">
+            <br />
+            <label>Coach or assistant coach (no experience necessary – a required coaches’ clinic is scheduled for March 25</label>
+            <input type="checkbox" class="form-control" name="coachcheck">
+            <br />
+            <label>Contribution to scholarship fund (tax deductible) – please include donation with application</label>
+            <input type="checkbox" class="form-control" name="scholarshipcheck">
+            <br />
+            <br />
+            <p>WAIVER AND RELEASE OF ANY AND ALL LIABILITY TO BE READ AND SIGNED BY THE PARENT OR LEGAL GUARDIAN OF PLAYER PRIOR TO PARTICIPATION IN ACTIVITIES</p>
+            <p>
+            I hereby acknowledge that I voluntarily applied on behalf of the above named player to participate in practices and soccer games affiliated with Goshen Youth Soccer Organization, Inc. for the 2017 season.
+
+            I am aware that soccer is a potentially hazardous activity, and consent to the player’s participation in this activity with knowledge of the danger involved and hereby agree to accept any and all risks of injury or death.
+
+            I hereby release and discharge Goshen Youth Soccer Organization, Inc., together with its successors, assigns, trustees, officers, employees, representatives and agents, of and from any and all claims or liability of any type whatsoever, including, but not limited to, property damage, physical injury, mental anguish, embarrassment, defamation, and invasion of privacy, which the player may suffer arising out of, based upon, resulting from, or in any way connected with the player’s participation in, and travel to and from, Goshen Youth Soccer Organization, Inc. activities, including but not limited to any claim arising out of, based upon, resulting from, or in any way connected with the negligence, omissions, or other acts of Goshen Youth Soccer Organization, Inc., its successors, assigns, trustees, officers, employees, representatives or agents, or the condition of all or any part of premises used by Goshen Youth Soccer Organization, Inc.  I also give permission for my child to be photographed for use without name identification on Goshen Youth Soccer Organization web sites or other promotional materials.
+
+            I acknowledge and agree that I, and the Player, understand that the foregoing release means that if the player is injured, or any property of a player or any part thereof is damaged while the player is participating in a Goshen Youth Soccer Organization, Inc. activity:
+
+            The Player will not be able to recover from Goshen Youth Soccer Organization, Inc., or any of its officers, directors, employees, representatives or agents for any of the above-described injuries, losses or damage suffered thereby, even if such injuries or damage are due to the acts or omissions of Goshen Youth Soccer Organization, Inc., or its successors, assigns, trustees, directors, officers, employees, representatives or agents.
+
+            The Player will not be able to make a claim for or file a lawsuit against Goshen Youth Soccer Organization, Inc., or successors, assigns, trustees, directors, officers, employees, representatives or agents even though Goshen Youth Soccer Organization, Inc., its successors, assigns, trustees, directors, officers, employees, representatives or agents may have been liable to the Player.
+
+            I have carefully read this Agreement, and fully understand its contents.  I am aware that it is a release of liability, and a valid contract for consideration between myself, and on behalf of the Player named herein, and Goshen Youth Soccer Organization, Inc., and I have signed it of my own free will.
+            </p>
+            <br />
+            <label>Signature</label>
+            <input type="text" class="form-control" placeholder="" name="signature">
+            <br />
+            <label>Dated</label>
+            <input type="text" class="form-control" placeholder="" name="signaturedate">
+            <br />
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Submit">Submit and Pay</button>
+            <br />
+            <p style="color: red">@Model.Error</p>
+        </form>
+    </div> <!-- /container -->
+</body>
+</html>
