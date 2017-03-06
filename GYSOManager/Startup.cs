@@ -3,7 +3,9 @@ using Nancy.Owin;
 using Nancy;
 using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
-using Microsoft.Owin;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
 
 namespace GYSOManager
 {
@@ -19,10 +21,21 @@ namespace GYSOManager
     {
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
-            //StaticConfiguration.DisableErrorTraces = false;
+            StaticConfiguration.DisableErrorTraces = false;
 
             base.ApplicationStartup(container, pipelines);
             Nancy.Security.Csrf.Enable(pipelines);
+
+            CreateTables();
+        }
+
+
+        private void CreateTables()
+        {
+            using (var db = new GYSOContext())
+            {
+                db.Database.EnsureCreated();
+            }
         }
     }
 }

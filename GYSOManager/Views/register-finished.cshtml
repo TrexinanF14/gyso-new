@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>GYSO Sign Up</title>
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <p>Player has been registered/El jugador ha sido registrado</p>
+        <a href="/register-english">Enter another player/otro jugador</a>
+        <p>or</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="KS77MZP26SRYC">
+            <table>
+                <tr><td><input type="hidden" name="on0" value="Number of Players">Number of Players</td></tr>
+                <tr>
+                    <td>
+                        <select name="os0">
+                            <option value="One Player">One Player $45.00 USD</option>
+                            <option value="Two Players">Two Players $65.00 USD</option>
+                            <option value="Three Players">Three Players $85.00 USD</option>
+                            <option value="Four Players">Four Players $105.00 USD</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div> <!-- /container -->
+</body>
+</html>

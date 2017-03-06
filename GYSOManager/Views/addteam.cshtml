@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add/Edit Team</title>
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin" method="post">
+            <h3 class="form-signin-heading">Add/Edit Team</h3>
+            <label>Team Name</label>
+            <input class="form-control" type="text" name="Name" value="@Model.Name">
+            <br />
+            <label>Sex</label>
+            <select class="form-control" name="Sex" required value="@Model.Sex">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+            <br />
+            <label>Grade</label>
+            <select class="form-control" name="GradeId" required value="@Model.GradeId">
+                <option value="1">Kindergarten</option>
+                <option value="2">1st</option>
+                <option value="3">2nd-3rd</option>
+                <option value="4">4th-5th</option>
+                <option value="5">Middle</option>
+            </select>
+            <br />
+            <label>Coach Name</label>
+            <input class="form-control" type="text" name="CoachName" value="@Model.CoachName">
+            <br />
+            <label>Coach Email</label>
+            <input class="form-control" type="text" name="CoachEmail" value="@Model.CoachEmail">
+            <br />
+            <label>Coach Phone</label>
+            <input class="form-control" type="text" name="CoachPhone" value="@Model.CoachPhone">
+            <br />
+            <label>Lead Coach Name</label>
+            <input class="form-control" type="text" name="LeadCoachName" value="@Model.LeadCoachName">
+            <br />
+            <label>Lead Coach Email</label>
+            <input class="form-control" type="text" name="LeadCoachEmail" value="@Model.LeadCoachEmail">
+            <br />
+            <label>Lead Coach Phone</label>
+            <input class="form-control" type="text" name="LeadCoachPhone" value="@Model.LeadCoachPhone">
+            <br />
+            <input class="btn" type="submit" value="Submit">
+            <input name="TeamId" value="@Model.TeamId" hidden />
+            @Html.AntiForgeryToken()
+        </form>
+    </div> <!-- /container -->
+</body>
+</html>

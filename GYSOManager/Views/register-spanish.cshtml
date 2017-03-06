@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>La Registratcion</title>
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin" method="post">
+            <h3 class="form-signin-heading">LA REGISTRACIÓN (UNA FORMA POR JUGADOR)</h3>
+            <a href="/register-english">En Ingles</a>
+            <br />
+            <br />
+            <label>Nombre del jugador</label>
+            <input type="text" class="form-control" placeholder="Name" name="name" required>
+            <br />
+            <label>Grado</label>
+            <select class="form-control" name="GradeId" required>
+                <option value="1">Kindergarten</option>
+                <option value="2">1st</option>
+                <option value="3">2nd-3rd</option>
+                <option value="4">4th-5th</option>
+                <option value="5">Middle</option>
+            </select>
+            <br />
+            <label>Sexo</label>
+            <select class="form-control" name="sex" required>
+                <option value="0">Niño</option>
+                <option value="1">Niña</option>
+            </select>
+            <br />
+            <label>Fecha de nacimiento</label>
+            <input type="datetime" class="form-control" placeholder="XX/XX/20XX" name="birthday" required>
+            <br />
+            <label>Capacidad atlética</label>
+            <select class="form-control" name="athletic" required>
+                <option value="Average">Promedio</option>
+                <option value="Considerable">Avanzado</option>
+                <option value="Limited">Limitado</option>
+            </select>
+            <br />
+            <label>Experiencia de fútbol adicional (si alguna)</label>
+            <input type="text" class="form-control" placeholder="" name="soccerexperience">
+            <br />
+            <label>Me gustaría jugar en el equipo de (nombre del jugador)</label>
+            <input type="text" class="form-control" placeholder="Player Name" name="playwith">
+            <br />
+            <label>Nombre del padre</label>
+            <input type="text" class="form-control" placeholder="" name="parentname" required>
+            <br />
+            <label>Numero de telefono preferido</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="parentphone1" required>
+            <br />
+            <label>No. Telefono 2 (opcional)</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="parentphone2">
+            <br />
+            <label>Email</label>
+            <input type="text" class="form-control" placeholder="example@example.com" name="parentemail" required>
+            <br />
+            <label>Contaco de Emergencia (si el padre no esta disponible)</label>
+            <input type="text" class="form-control" placeholder="" name="emergencyname" required>
+            <br />
+            <label>No. Telefono 1</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="emergencyphone1" required>
+            <br />
+            <label>No. Telefono 2 (opcional)</label>
+            <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="emergencyphone2">
+            <br />
+            <label>Patrocinador (se necesitan $250.00 [deducible en los impuestos] por cada equipo.  Su nombre o el de su empresa aparecerán en las camisetas)</label>
+            <input type="checkbox" class="form-control" name="sponsorcheck" value="true">
+            <br />
+            <label>Entrenador o asistente (no necesita experiencia – una clínica requerida para los entrenadores programada para el 25 de marzo)</label>
+            <input type="checkbox" class="form-control" name="coachcheck" value="true">
+            <br />
+            <label>Contribución al fondo de becas (deducible en los impuestos) – incluya por favor la donación con la solicitud</label>
+            <input type="checkbox" class="form-control" name="scholarshipcheck" value="true">
+            <br />
+            <br />
+            <p>RENUNCIA DE RESPONSABILIDAD LEGAL</p>
+            <p>PADRES O GUARDIANES LEGALES DE LOS JUGADORES DEBEN LEER Y FIRMAR ANTES DE PARTICIPAR EN LAS ACTIVIDADES</p>
+            <p>
+            Reconozco por este medio que hice solicitud voluntariamente a nombre del jugador arriba nombrando para participar en el entrenamiento y en los partidos afiliados con “Goshen Youth Soccer Organization, Inc.” en el año 2017.
+
+            Entiendo que el futbol puede ser una actividad peligrosa y le doy mi permiso al jugador que participe en esta actividad con el conocimiento de la posibilidad de peligro y estoy de acuerdo en aceptar cualquier riesgo de daño o muerte.
+
+            Por este medio exonero y descargo a “Goshen Youth Soccer Organization, Inc.”, junto a sus sucesores, asignados, fideicomisarios, oficiales, empleados, representantes y agentes, de cualquier responsabilidad de cualquier tipo.  Incluye, sin estar limitado a, daño de propiedad, heridas físicas, angustia mental, vergüenza, difamación, e invasión de privacidad, que el jugador pueda sufrir en cualquier momento, basado en, resultando de o en cualquier manera conectado con viaje a y de las actividades, y la participación del jugador en actividades de “Goshen Youth Soccer Organization, Inc.” incluyendo pero no limitando a cualquier reclamo en cualquier momento, basado en, resultando de o en cualquier manera conectado con la negligencia, omisiones u otros hechos de “Goshen Youth Soccer Organization, Inc.” y sus sucesores, asignados, fideicomisarios, oficiales, empleados, representantes y agentes, o todas partes de las propiedad usadas por “Goshen Youth Soccer Organization, Inc.”  Yo también doy permiso para que mi niño sea fotografiado para el uso sin identificación de nombre en sitios web de “Goshen Youth Soccer Organization, Inc.” u otros materiales promocionales.
+
+            A.  El Jugador no podrá recuperar de “Goshen Youth Soccer Organization, Inc.”  o sus sucesores, asignados, fideicomisarios, oficiales, empleados, representantes y agentes por los daños, pérdidas, o heridas sufridas en relación con esto aunque las heridas o daños ocurran y estén relacionadas con actos u omisiones de “Goshen Youth Soccer Organization, Inc.” o sus sucesores, asignados, fideicomisarios, oficiales, empleados, representantes y agentes.
+
+            B.  El jugador no podrá hacer una demanda o pleito legal contra “Goshen Youth Soccer Organization, Inc.” o sus sucesores, asignados, fideicomisarios, oficiales empleados, representantes y agentes aunque “Goshen Youth Soccer Organization, Inc.” o sus sucesores, asignados, fideicomisarios, oficiales, empleados, representantes y agentes puedan haber sido responsables por el jugador.
+
+            He leído este acuerdo y entiendo completamente su contenido.  Estoy conciente que es una renuncia de reclamo legal y un contrato válido para la consideración entre, yo, el jugador nombrado arriba y “Goshen Youth Soccer Organization, Inc.” y he firmado por voluntad propia.
+            </p>
+            <br />
+            <label>Firma</label>
+            <input type="text" class="form-control" placeholder="" name="signature" required>
+            <br />
+            <label>Fecha</label>
+            <input type="text" class="form-control" placeholder="XX/XX/20XX" name="signaturedate" required>
+            <br />
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Submit">Continuar</button>
+            <br />
+            @Html.AntiForgeryToken()
+        </form>
+        <p style="color: red">@Model.Error</p>
+        <br />
+        <a href="/login">Admin</a>
+    </div> <!-- /container -->
+</body>
+</html>

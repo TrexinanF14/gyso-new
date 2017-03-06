@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Data.SQLite;
 
 namespace GYSOManager.Modules
 {
@@ -23,6 +24,12 @@ namespace GYSOManager.Modules
             };
             Get["/register-english"] = _ =>
             {
+                var settings = Settings.Read();
+                if (!settings.RegistrationOpen)
+                {
+                    return View["register-closed"];
+                }
+
                 return View["register-english", new
                 {
                     Error = ""
@@ -30,54 +37,45 @@ namespace GYSOManager.Modules
             };
             Post["/register-english"] = _ =>
             {
-                var reg = this.Bind<Registration>();
+                WriteRegistration();
+                return Response.AsRedirect("/register/complete");
+            };
+            Get["/register-spanish"] = _ =>
+            {
+                var settings = Settings.Read();
+                if (!settings.RegistrationOpen)
+                {
+                    return View["register-closed"];
+                }
 
-                return "hello";
+
+                return View["register-spanish", new
+                {
+                    Error = ""
+                }];
+            };
+            Post["/register-spanish"] = _ =>
+            {
+                WriteRegistration();
+                return Response.AsRedirect("/register/complete");
+            };
+            Get["/register/complete"] = _ =>
+            {
+                return View["register-finished"];
             };
         }
-    }
 
-    public enum Grade
-    {
-        Kindergarten = 0,
-        First = 1,
-        SecondThird = 2,
-        FourthFith = 3,
-        Middle = 4
-    }
+        private void WriteRegistration()
+        {
+            this.ValidateCsrfToken();
 
-    public class Registration
-    {
-        public string name;
-
-        public Grade grade;
-
-        public string sex;
-
-        public string birthday;
-
-        public string athletic;
-
-        public string soccerexperience;
-
-        public string playwith;
-
-        public string parentname;
-
-        public string parentphone1;
-
-        public string parentphone2;
-
-        public string parentemail;
-
-        public string emergencyname;
-
-        public string emergencyphone1;
-
-        public string emergencyphone2;
-
-        public string signature;
-
-        public string signaturedate;
+            var reg = this.Bind<Registration>();
+            reg.RegistrationDate = DateTime.Now;
+            using (var db = new GYSOContext())
+            {
+                db.Add(reg);
+                db.SaveChanges();
+            }
+        }
     }
 }

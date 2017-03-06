@@ -4,8 +4,6 @@
     <title>GYSO Sign Up</title>
     <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="1063937390683-bi7dtosbmjgjcqe2pfiis2k7ode90a8p.apps.googleusercontent.com">
 </head>
 <body>
     <div class="container">
@@ -18,18 +16,18 @@
             <input type="text" class="form-control" placeholder="Name" name="name" required>
             <br />
             <label>Current Grade</label>
-            <select class="form-control" name="grade" required>
-                <option value="0">Kindergarten</option>
-                <option value="1">1st Grade</option>
-                <option value="2">2nd-3rd Grade</option>
-                <option value="3">4th-5th Grade</option>
-                <option value="4">Middle School</option>
+            <select class="form-control" name="GradeId" required>
+                <option value="1">Kindergarten</option>
+                <option value="2">1st</option>
+                <option value="3">2nd-3rd</option>
+                <option value="4">4th-5th</option>
+                <option value="5">Middle</option>
             </select>
             <br />
             <label>Sex</label>
             <select class="form-control" name="sex" required>
-                <option value="m">Male</option>
-                <option value="f">Female</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
             </select>
             <br />
             <label>Birth Date</label>
@@ -42,11 +40,11 @@
                 <option value="Limited">Limited</option>
             </select>
             <br />
-            <label>Addtional Soccer Experience</label>
-            <input type="text" class="form-control" placeholder="" name="soccerexperience" required>
+            <label>Addtional Soccer Experience (optional)</label>
+            <input type="text" class="form-control" placeholder="" name="soccerexperience">
             <br />
-            <label>I want to play with (name of one player)</label>
-            <input type="text" class="form-control" placeholder="Player Name" name="playwith" required>
+            <label>I want to play with (name of one player, optional)</label>
+            <input type="text" class="form-control" placeholder="Player Name" name="playwith">
             <br />
             <label>Parent's Name</label>
             <input type="text" class="form-control" placeholder="" name="parentname" required>
@@ -70,13 +68,13 @@
             <input type="text" class="form-control" placeholder="1-XXX-XXX-XXXX" name="emergencyphone2">
             <br />
             <label>Sponsor ($250 [tax-deductible] per team – your business name and logo will appear on team t-shirts)</label>
-            <input type="checkbox" class="form-control" name="sponsorcheck">
+            <input type="checkbox" class="form-control" name="sponsorcheck" value="true">
             <br />
             <label>Coach or assistant coach (no experience necessary – a required coaches’ clinic is scheduled for March 25</label>
-            <input type="checkbox" class="form-control" name="coachcheck">
+            <input type="checkbox" class="form-control" name="coachcheck" value="true">
             <br />
             <label>Contribution to scholarship fund (tax deductible) – please include donation with application</label>
-            <input type="checkbox" class="form-control" name="scholarshipcheck">
+            <input type="checkbox" class="form-control" name="scholarshipcheck" value="true">
             <br />
             <br />
             <p>WAIVER AND RELEASE OF ANY AND ALL LIABILITY TO BE READ AND SIGNED BY THE PARENT OR LEGAL GUARDIAN OF PLAYER PRIOR TO PARTICIPATION IN ACTIVITIES</p>
@@ -97,15 +95,18 @@
             </p>
             <br />
             <label>Signature</label>
-            <input type="text" class="form-control" placeholder="" name="signature">
+            <input type="text" class="form-control" placeholder="" name="signature" required>
             <br />
             <label>Dated</label>
-            <input type="text" class="form-control" placeholder="" name="signaturedate">
+            <input type="text" class="form-control" placeholder="XX/XX/20XX" name="signaturedate" required>
             <br />
-            <button class="btn btn-lg btn-success btn-block" type="submit" value="Submit">Submit and Pay</button>
+            <button class="btn btn-lg btn-success btn-block" type="submit" value="Submit">Submit</button>
             <br />
-            <p style="color: red">@Model.Error</p>
+            @Html.AntiForgeryToken()
         </form>
+        <p style="color: red">@Model.Error</p>
+        <br />
+        <a href="/login">Admin</a>
     </div> <!-- /container -->
 </body>
 </html>
