@@ -174,9 +174,6 @@
 					<option value="false" @(Model.RegistrationOpen == true ? "" : "selected")>No</option>
 				</select>
                 <br />
-                <label>Registration price</label>
-                <input type="number" class="form-control" name="RegistrationPrice" value="@Model.RegistrationPrice" style="width: 100px">
-                <br />
                 <input class="btn btn-primary" type="submit" value="Update">
             </form>
 			<br />
@@ -195,7 +192,6 @@
 				],
 				columnDefs: [{
 					targets: -1,
-					visible: false,
 					searchable: false
 				}]
 			});

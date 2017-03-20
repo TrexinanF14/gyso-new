@@ -19,15 +19,13 @@ namespace GYSOManager.Modules
 
             Get["/login"] = _ =>
             {
-                if (!Request.Cookies.ContainsKey("token"))
+                if (Request.Cookies.ContainsKey("token"))
                 {
-                    return Response.AsRedirect("/login");
-                }
-
-                var token = Request.Cookies["token"];
-                if (token == GetHashSha256(adminpassword))
-                {
-                    return Response.AsRedirect("/admin");
+                    var token = Request.Cookies["token"];
+                    if (token == GetHashSha256(adminpassword))
+                    {
+                        return Response.AsRedirect("/admin");
+                    }
                 }
 
                 return View["login", new
