@@ -34,3 +34,10 @@
 #inputUsername {
     margin-bottom: 10px
 }
+
+.columnSearchInput {
+    min-width:120px;
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}

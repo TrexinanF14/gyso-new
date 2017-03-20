@@ -187,6 +187,9 @@
     <Content Include="content\css\login.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="content\js\app.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\gysoregistration - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\hsidownloadserver - Web Deploy.pubxml" />
