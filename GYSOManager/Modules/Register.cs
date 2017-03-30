@@ -24,8 +24,10 @@ namespace GYSOManager.Modules
             };
             Get["/register-english"] = _ =>
             {
+                string bypass = Request.Query["bypass"];
+
                 var settings = Settings.Read();
-                if (!settings.RegistrationOpen)
+                if (!settings.RegistrationOpen && string.IsNullOrEmpty(bypass))
                 {
                     return View["register-closed"];
                 }
@@ -37,17 +39,19 @@ namespace GYSOManager.Modules
             };
             Post["/register-english"] = _ =>
             {
-                WriteRegistration();
-                return Response.AsRedirect("/register/complete");
+                var reg = this.Bind<Registration>();
+                WriteRegistration(reg);
+                return Response.AsRedirect("/register/complete?name=" + reg.name);
             };
             Get["/register-spanish"] = _ =>
             {
+                string bypass = Request.Query["bypass"];
+
                 var settings = Settings.Read();
-                if (!settings.RegistrationOpen)
+                if (!settings.RegistrationOpen && string.IsNullOrEmpty(bypass))
                 {
                     return View["register-closed"];
                 }
-
 
                 return View["register-spanish", new
                 {
@@ -56,20 +60,32 @@ namespace GYSOManager.Modules
             };
             Post["/register-spanish"] = _ =>
             {
-                WriteRegistration();
-                return Response.AsRedirect("/register/complete");
+                var reg = this.Bind<Registration>();
+                WriteRegistration(reg);
+                return Response.AsRedirect("/register/complete?name=" + reg.name);
             };
             Get["/register/complete"] = _ =>
             {
-                return View["register-finished"];
+                string playerName = Request.Query["name"];
+                if (string.IsNullOrEmpty(playerName))
+                {
+                    playerName = "Player";
+                }
+
+                var settings = Settings.Read();
+
+                return View["register-finished", new
+                {
+                    HigherPrice = settings.HigherPrice,
+                    PlayerName = playerName
+                }];
             };
         }
 
-        private void WriteRegistration()
+        private void WriteRegistration(Registration reg)
         {
             this.ValidateCsrfToken();
 
-            var reg = this.Bind<Registration>();
             reg.RegistrationDate = DateTime.Now;
             using (var db = new GYSOContext())
             {

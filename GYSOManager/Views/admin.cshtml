@@ -155,7 +155,7 @@
             }
             <br />
             <br />
-            <a class="btn btn-primary" href="/register-english">Register Player</a>
+            <a class="btn btn-primary" href="/register-english?bypass=true">Register Player</a>
         </div>
         <div class="row">
             <h3>Teams</h3>
@@ -192,20 +192,33 @@
             <br />
             <a class="btn btn-primary" href="/admin/addteam">Add Team</a>
         </div>
+        
+        <div class="row">
+            <br />
+            <a class="btn btn-primary" href="/calendar">Calendar</a>
+            <br />
+        </div>
+
         <div class="row">
             <form action="/admin/updatesettings" method="post">
                 <h3>Settings</h3>
                 <br />
                 <label>Registration is open</label>
-				<select class="form-control" name="RegistrationOpen" style="width: 100px">
-					<option value="true" @(Model.RegistrationOpen == false ? "" : "selected")>Yes</option>
-					<option value="false" @(Model.RegistrationOpen == true ? "" : "selected")>No</option>
-				</select>
+                <select class="form-control" name="RegistrationOpen" style="width: 100px">
+                    <option value="true" @(Model.RegistrationOpen == false ? "" : "selected")>Yes</option>
+                    <option value="false" @(Model.RegistrationOpen == true ? "" : "selected")>No</option>
+                </select>
+                <br />
+                <label>Higher Price</label>
+                <select class="form-control" name="HigherPrice" style="width: 100px">
+                    <option value="true" @(Model.HigherPrice == false ? "" : "selected")>Yes</option>
+                    <option value="false" @(Model.HigherPrice == true ? "" : "selected")>No</option>
+                </select>
                 <br />
                 <input class="btn btn-primary" type="submit" value="Update">
             </form>
-			<br />
-			<a class="btn btn-warning" href="/logout">Log Out</a>
+            <br />
+            <a class="btn btn-warning" href="/logout">Log Out</a>
         </div>
     </div> <!-- /container -->
 </body>

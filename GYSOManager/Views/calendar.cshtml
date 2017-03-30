@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add/Edit Team</title>
+    <link href="/content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/content/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h2>GYSO Calendar</h2>
+        <p>Note that the first week is usually all practices. Times are always either 5:30 or 6:30 pm.</p>
+        <h4>Kindergarten Practices:</h4>
+        @foreach(var date in Model.KPractices)
+        {
+            <p>@date</p>
+        }
+        <h4>Kindergarten Games:</h4>
+        @foreach (var date in Model.KGames)
+        {
+            <p>@date</p>
+        }
+        <h4>1st Through 3rd Practices:</h4>
+        @foreach (var date in Model.G1G3Practices)
+        {
+            <p>@date</p>
+        }
+        <h4>1st Through 3rd Games:</h4>
+        @foreach (var date in Model.G1G3Games)
+        {
+            <p>@date</p>
+        }
+        <h4>4th Through Middle School Girls Practices:</h4>
+        @foreach (var date in Model.G4G8GirlsPractices)
+        {
+            <p>@date</p>
+        }
+        <h4>4th Through Middle School Girls Games:</h4>
+        @foreach (var date in Model.G4G8GirlsGames)
+        {
+            <p>@date</p>
+        }
+        <h4>4th Through Middle School Boys Practices:</h4>
+        @foreach (var date in Model.G4G8BoysPractices)
+        {
+            <p>@date</p>
+        }
+        <h4>4th Through Middle School Boys Games:</h4>
+        @foreach (var date in Model.G4G8BoysGames)
+        {
+            <p>@date</p>
+        }
+    </div> <!-- /container -->
+</body>
+</html>

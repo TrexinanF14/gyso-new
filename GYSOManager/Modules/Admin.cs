@@ -63,6 +63,7 @@ namespace GYSOManager.Modules
                         GradeTeams = gradeTeams,
                         Expanded = expanded,
                         RegistrationOpen = settings.RegistrationOpen,
+                        HigherPrice = settings.HigherPrice,
                         Teams = teams,
                         Players = players.Where(x => x.RegistrationDate.Year == currentYear)
                     }];
@@ -177,6 +178,8 @@ namespace GYSOManager.Modules
         private static string SettingsFilepath = ConfigurationManager.AppSettings["settingsfile"];
 
         public bool RegistrationOpen = true;
+
+        public bool HigherPrice = false;
 
         public static Settings Read()
         {
