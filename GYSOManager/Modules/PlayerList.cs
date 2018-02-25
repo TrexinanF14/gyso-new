@@ -40,6 +40,7 @@ namespace GYSOManager.Modules
                 string playerStr = ctx.Registrations
                     .ToList()
                     .Where(x => x.parentemail == email)
+                    .Where(x => x.RegistrationDate.Year == DateTime.Now.Year)
                     .Select(x => x.name)
                     .Aggregate("", (next, agg) => agg + Environment.NewLine + next);
 
