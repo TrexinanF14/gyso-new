@@ -13,8 +13,6 @@ namespace GYSOManager.Modules
 {
     public class RegisterModule : NancyModule
     {
-        public static List<DateTime> requests = new List<DateTime>();
-
         public RegisterModule()
             : base("/")
         {

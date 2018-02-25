@@ -223,6 +223,12 @@
     <Content Include="Views\calendar.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\player-list.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\player-list-complete.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -240,8 +246,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Modules\Calendar.cs" />
     <Compile Include="Modules\Login.cs" />
+    <Compile Include="Modules\PlayerList.cs" />
     <Compile Include="Modules\Register.cs" />
     <Compile Include="Modules\Admin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
