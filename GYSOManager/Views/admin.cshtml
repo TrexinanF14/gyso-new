@@ -183,7 +183,7 @@
                             <td>@team.CoachName</td>
                             <td>@team.LeadCoachName</td>
                             <td><a class="btn btn-warning" href="/admin/editteam?teamid=@team.TeamId">Edit</a></td>
-                            <td><a class="btn btn-danger" href="/admin/removeteam?teamid=@team.TeamId">Delete</a></td>
+                            <td><form action="/admin/removeteam?teamid=@team.TeamId" method="post"><input type="submit" name="bogus" value="Delete" class="btn btn-danger" /></form></td>
                         </tr>
                     }
                 </tbody>
@@ -191,6 +191,13 @@
             <br />
             <br />
             <a class="btn btn-primary" href="/admin/addteam">Add Team</a>
+            <br />
+            <br />
+            <form action="/admin/removeteam" method="post">
+                <input type="checkbox" name="confirmdeleteall" value="true" /> I confirm this deletion
+                <br />
+                <input type="submit" name="bogus" value="Delete All Teams" class="btn btn-danger" />
+            </form>
         </div>
         
         <div class="row">

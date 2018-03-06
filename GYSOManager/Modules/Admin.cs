@@ -45,9 +45,20 @@ namespace GYSOManager.Modules
 
                 var settings = Settings.Read();
 
+                var currentYear = DateTime.Now.Year;
+
                 using (var ctx = new GYSOContext())
                 {
-                    var currentYear = DateTime.Now.Year;
+                    bool removedPlayer = false;
+                    foreach (var oldPlayer in ctx.Registrations.ToList().Where(x => x.RegistrationDate.Year != currentYear))
+                    {
+                        removedPlayer = true;
+                        ctx.Registrations.Remove(oldPlayer);
+                    }
+                    if (removedPlayer)
+                    {
+                        ctx.SaveChanges();
+                    }
 
                     var teams = ctx.Teams.Include(x => x.Grade).ToList();
 
@@ -154,18 +165,33 @@ namespace GYSOManager.Modules
 
                 return Response.AsRedirect("/admin");
             };
-            Get["/admin/removeteam"] = _ =>
+            Post["/admin/removeteam"] = _ =>
             {
-                var teamid = int.Parse(Request.Query["teamid"]);
+                if (Request.Form["confirmdeleteall"] == null)
+                {
+                    return Response.AsRedirect("/admin");
+                }
+
+                int? teamid = null;
+                int tmp;
+                if (int.TryParse(Request.Query["teamid"], out tmp))
+                {
+                    teamid = tmp;
+                }
 
                 using (var ctx = new GYSOContext())
                 {
-                    var team = ctx.Teams.ToList().Where(x => x.TeamId == teamid).FirstOrDefault();
-                    if (team != null)
+                    foreach (var player in ctx.Registrations.ToList().Where(x => teamid == null ||  x.TeamId == teamid))
+                    {
+                        player.TeamId = null;
+                    }
+
+                    foreach (var team in ctx.Teams.ToList().Where(x => teamid == null || x.TeamId == teamid))
                     {
                         ctx.Remove(team);
-                        ctx.SaveChanges();
                     }
+
+                    ctx.SaveChanges();
                 }
 
                 return Response.AsRedirect("/admin");

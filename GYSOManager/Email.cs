@@ -19,6 +19,7 @@ namespace GYSOManager
         public static void SendMessage(string recipient, string body)
         {
             var client = new SmtpClient(Server, Port);
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
             client.UseDefaultCredentials = false;
             client.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["email-password"]);
             client.EnableSsl = true;
