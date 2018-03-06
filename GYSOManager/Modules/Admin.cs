@@ -167,16 +167,16 @@ namespace GYSOManager.Modules
             };
             Post["/admin/removeteam"] = _ =>
             {
-                if (Request.Form["confirmdeleteall"] == null)
-                {
-                    return Response.AsRedirect("/admin");
-                }
-
                 int? teamid = null;
                 int tmp;
                 if (int.TryParse(Request.Query["teamid"], out tmp))
                 {
                     teamid = tmp;
+                }
+
+                if (Request.Form["confirmdeleteall"] == null && teamid == null)
+                {
+                    return Response.AsRedirect("/admin");
                 }
 
                 using (var ctx = new GYSOContext())
