@@ -41,8 +41,7 @@ namespace GYSOManager.Modules
                     .ToList()
                     .Where(x => x.parentemail == email)
                     .Where(x => x.RegistrationDate.Year == DateTime.Now.Year)
-                    .Select(x => x.name)
-                    .Aggregate("", (next, agg) => agg + Environment.NewLine + next);
+                    .Aggregate("", (agg, next) => agg + Environment.NewLine + $"{next.name} (registered on {next.RegistrationDate.ToLongDateString()})");
 
                 if (string.IsNullOrWhiteSpace(playerStr))
                 {
